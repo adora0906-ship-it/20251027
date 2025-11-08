@@ -36,7 +36,7 @@ function createSideMenu() {
         fontSize: '32px' // 選單文字大小 32px
     });
 
-    const items = ['第一單元作品', '第一單元講義', '測驗系統', '回到首頁'];
+    const items = ['第一單元作品', '第一單元講義', '測驗系統', '測驗卷筆記', '作品筆記', '回到首頁'];
     items.forEach((txt, idx) => {
         const a = document.createElement('a');
         a.href = '#';
@@ -49,6 +49,7 @@ function createSideMenu() {
             fontSize: '32px',
             cursor: 'pointer'
         });
+
         // 第一個選項：點擊時以 iframe 開啟指定網址
         if (idx === 0) {
             a.addEventListener('click', (ev) => {
@@ -61,6 +62,27 @@ function createSideMenu() {
             a.addEventListener('click', (ev) => {
                 ev.preventDefault();
                 openIframe('https://hackmd.io/@VJcjhMUTQuSJpCvVU9Kaow/SJPgDmAslg');
+            });
+        }
+        // 第三個選項：測驗系統
+        if (idx === 2) {
+            a.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                openIframe('https://adora0906-ship-it.github.io/20251103/');
+            });
+        }
+        // 第四個選項：測驗卷筆記
+        if (idx === 3) {
+            a.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                openIframe('https://hackmd.io/@VJcjhMUTQuSJpCvVU9Kaow/S1H_msByWx');
+            });
+        }
+        // 第五個選項：作品筆記
+        if (idx === 4) {
+            a.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                openIframe('https://hackmd.io/@VJcjhMUTQuSJpCvVU9Kaow/S1H_msByWx');
             });
         }
         sideMenu.appendChild(a);
